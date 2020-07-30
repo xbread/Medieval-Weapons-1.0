@@ -1,0 +1,1 @@
+"D:\Steam\steamapps\common\garrysmod\bin\gmpublish.exe" update -addon "C:\Users\Bread\Documents\GitHub\Medieval-Weapons-1.0\melee_arts_medieval.gma" -id "2182157019" -changes "Add new swords, fixed world model for double bladed axe"
