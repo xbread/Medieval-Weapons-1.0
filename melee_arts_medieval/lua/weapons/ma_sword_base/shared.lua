@@ -2,14 +2,14 @@ SWEP.Base = "dangumeleebase"
 SWEP.AdminSpawnable = true
 SWEP.AutoSwitchTo = false
 SWEP.Slot = 0
-SWEP.PrintName = "Sword Base"
+SWEP.PrintName = "sword base (DONT USE)"
 SWEP.Author = "Bread"
 SWEP.Spawnable = true
 SWEP.AutoSwitchFrom = false
 SWEP.Weight = 5
 SWEP.Category = "Melee Arts 2 (Medieval)"
 SWEP.SlotPos = 1
-SWEP.Purpose = "A sturdy iron sword."
+SWEP.Purpose = "A sword filled with pure evil."
 SWEP.ViewModelFOV = 90
 SWEP.ViewModelFlip = false
 SWEP.ViewModel = "models/models/danguyen/c_oren_katana.mdl"
@@ -19,11 +19,11 @@ SWEP.ShowWorldModel = false
 SWEP.UseHands = true
 --STAT RATING (1-6)
 SWEP.Type = 1 --1: Blade, 2: Axe, 3:Bludgeon, 4: Spear
-SWEP.Strength = 3 -- 1-2: Small Weapons, 3-4: Medium Weapons (e.g crowbar), 5-6: Heavy Weapons (e.g Sledgehammers and Greatswords). Strength affects throwing distance and force
-SWEP.Speed = 3 -- 1-2: Slow, 3-4: Decent, 5-6: Fast
-SWEP.Tier = 3 -- General rating based on how good/doodoo the weapon is
+SWEP.Strength = 5 -- 1-2: Small Weapons, 3-4: Medium Weapons (e.g crowbar), 5-6: Heavy Weapons (e.g Sledgehammers and Greatswords). Strength affects throwing distance and force
+SWEP.Speed = 5 -- 1-2: Slow, 3-4: Decent, 5-6: Fast
+SWEP.Tier = 5 -- General rating based on how good/doodoo the weapon is
 --SWEPs are dumb (or I am) so we must state the weapon name again
-SWEP.WepName = "ma_ironsword"
+SWEP.WepName = "ma_lilith"
 --Stamina Costs
 SWEP.PriAtkStamina = 5
 SWEP.ThrowStamina = 5
@@ -32,8 +32,8 @@ SWEP.ShoveStamina = 5
 --Primary Attack Charge Values
 SWEP.Charge = 0
 SWEP.ChargeSpeed = 1
-SWEP.DmgMin = 25
-SWEP.DmgMax = 55
+SWEP.DmgMin = 90
+SWEP.DmgMax = 120
 SWEP.Delay = 0.65
 SWEP.TimeToHit = 0.05
 SWEP.Range = 65
@@ -60,7 +60,7 @@ SWEP.BlockHoldType = "slam"
 SWEP.ShoveHoldType = "fist"
 SWEP.ThrowHoldType = "grenade"
 --SOUNDS
-SWEP.SwingSound = ""
+SWEP.SwingSound = "weapons/iceaxe/iceaxe_swing1.wav"
 SWEP.ThrowSound = "weapons/iceaxe/iceaxe_swing1.wav"
 SWEP.Hit1Sound = "ambient/machines/slicer4.wav"
 SWEP.Hit2Sound = "ambient/machines/slicer3.wav"
@@ -106,14 +106,13 @@ SWEP.WhipPos = Vector(0, -10.252, 0)
 SWEP.WhipAng = Vector(70, 0, 0)
 SWEP.ThrowPos = Vector(-2.241, -4.02, 5.9)
 SWEP.ThrowAng = Vector(70, 17.587, 25.326)
-SWEP.FanPos = Vector(3.42, -11.056, 0.8)
+SWEP.FanPos = Vector(3.42, -11.056, 1)
 SWEP.FanAng = Vector(90, -18.996, 90)
 SWEP.WallPos = Vector(0, 0, 0)
 SWEP.WallAng = Vector(0, 0, 0)
 
 function SWEP:AttackAnimation()
     self.Weapon.AttackAnimRate = 1.1
-    self.Owner:EmitSound("linkedlunge.mp3")
     self.Weapon:SendWeaponAnim(ACT_VM_HITCENTER)
 end
 
@@ -124,13 +123,11 @@ function SWEP:AttackAnimation2()
     self.Weapon.AttackAnimRate = 1.8
 
     if right == true then
-        self.Owner:EmitSound("linkedslash.mp3")
         self.Punch1 = Angle(0, -15, 0)
         self.Weapon:SendWeaponAnim(ACT_VM_HITRIGHT)
         right = false
         left = true
     elseif left == true then
-        self.Owner:EmitSound("linkedslash.mp3")
         self.Punch1 = Angle(5, 10, 0)
         self.Weapon:SendWeaponAnim(ACT_VM_HITLEFT)
         left = false
@@ -145,12 +142,12 @@ end
 SWEP.VElements = {
     ["katana"] = {
         type = "Model",
-        model = "models/props/templarsword.mdl",
+        model = "models/nahka/lilith_sword.mdl",
         bone = "RW_Weapon",
         rel = "",
-        pos = Vector(0, 0.10, -11),
-        angle = Angle(0, 0, 0),
-        size = Vector(1, 0.8, 1),
+        pos = Vector(0, 0.10, 1),
+        angle = Angle(90, 0, 0),
+        size = Vector(1, 1, 1),
         color = Color(255, 255, 255, 255),
         surpresslightning = false,
         material = "",
@@ -162,12 +159,12 @@ SWEP.VElements = {
 SWEP.WElements = {
     ["katana1"] = {
         type = "Model",
-        model = "models/props/templarsword.mdl",
+        model = "models/nahka/lilith_sword.mdl",
         bone = "ValveBiped.Bip01_R_Hand",
         rel = "",
-        pos = Vector(2, 1.9, 5.015),
-        angle = Angle(15, 0, 195),
-        size = Vector(0.8, 0.982, 0.541),
+        pos = Vector(2, 1.9, -3),
+        angle = Angle(-90, 0, 195),
+        size = Vector(1, 0.982, 0.541),
         color = Color(255, 255, 255, 255),
         surpresslightning = false,
         material = "",

@@ -2,14 +2,14 @@ SWEP.Base = "dangumeleebase"
 SWEP.AdminSpawnable = true
 SWEP.AutoSwitchTo = false
 SWEP.Slot = 0
-SWEP.PrintName = "Iron Sword (Enchanted)"
+SWEP.PrintName = "Short Sword"
 SWEP.Author = "Bread"
 SWEP.Spawnable = true
 SWEP.AutoSwitchFrom = false
 SWEP.Weight = 5
 SWEP.Category = "Melee Arts 2 (Medieval)"
 SWEP.SlotPos = 1
-SWEP.Purpose = "An iron sword filled with pure dark magic."
+SWEP.Purpose = "A short sword."
 SWEP.ViewModelFOV = 90
 SWEP.ViewModelFlip = false
 SWEP.ViewModel = "models/models/danguyen/c_oren_katana.mdl"
@@ -19,11 +19,11 @@ SWEP.ShowWorldModel = false
 SWEP.UseHands = true
 --STAT RATING (1-6)
 SWEP.Type = 1 --1: Blade, 2: Axe, 3:Bludgeon, 4: Spear
-SWEP.Strength = 6 -- 1-2: Small Weapons, 3-4: Medium Weapons (e.g crowbar), 5-6: Heavy Weapons (e.g Sledgehammers and Greatswords). Strength affects throwing distance and force
+SWEP.Strength = 2 -- 1-2: Small Weapons, 3-4: Medium Weapons (e.g crowbar), 5-6: Heavy Weapons (e.g Sledgehammers and Greatswords). Strength affects throwing distance and force
 SWEP.Speed = 4 -- 1-2: Slow, 3-4: Decent, 5-6: Fast
-SWEP.Tier = 5 -- General rating based on how good/doodoo the weapon is
+SWEP.Tier = 2 -- General rating based on how good/doodoo the weapon is
 --SWEPs are dumb (or I am) so we must state the weapon name again
-SWEP.WepName = "ma_ironsword_enchanted"
+SWEP.WepName = "ma_short_sword"
 --Stamina Costs
 SWEP.PriAtkStamina = 5
 SWEP.ThrowStamina = 5
@@ -32,8 +32,8 @@ SWEP.ShoveStamina = 5
 --Primary Attack Charge Values
 SWEP.Charge = 0
 SWEP.ChargeSpeed = 1
-SWEP.DmgMin = 60
-SWEP.DmgMax = 90
+SWEP.DmgMin = 10
+SWEP.DmgMax = 30
 SWEP.Delay = 0.65
 SWEP.TimeToHit = 0.05
 SWEP.Range = 65
@@ -143,28 +143,14 @@ function SWEP:AttackAnimation3()
 end
 
 SWEP.VElements = {
-    ["katana+"] = {
-        type = "Model",
-        model = "models/props/templarsword.mdl",
-        bone = "RW_Weapon",
-        rel = "",
-        pos = Vector(0, 0.10, -11),
-        angle = Angle(0, 0, 0),
-        size = Vector(1, 0.8, 1),
-        color = Color(255, 0, 0, 255),
-        surpresslightning = false,
-        material = "models/effects/comball_tape",
-        skin = 0,
-        bodygroup = {}
-    },
     ["katana"] = {
         type = "Model",
-        model = "models/props/templarsword.mdl",
+        model = "models/aoc_weapon/w_shortsword.mdl",
         bone = "RW_Weapon",
         rel = "",
-        pos = Vector(0, 0.10, -11),
-        angle = Angle(0, 0, 0),
-        size = Vector(1, 0.8, 1),
+        pos = Vector(-0.5, 0.10, 8),
+        angle = Angle(-90, 70, 0),
+        size = Vector(1, 1, 1),
         color = Color(255, 255, 255, 255),
         surpresslightning = false,
         material = "",
@@ -174,27 +160,13 @@ SWEP.VElements = {
 }
 
 SWEP.WElements = {
-    ["katana1+"] = {
-        type = "Model",
-        model = "models/props/templarsword.mdl",
-        bone = "ValveBiped.Bip01_R_Hand",
-        rel = "",
-        pos = Vector(2, 1.9, 5.015),
-        angle = Angle(15, 0, 195),
-        size = Vector(0.8, 0.982, 0.541),
-        color = Color(0, 161, 255, 255),
-        surpresslightning = false,
-        material = "models/effects/comball_tape",
-        skin = 0,
-        bodygroup = {}
-    },
     ["katana1"] = {
         type = "Model",
-        model = "models/props/templarsword.mdl",
+        model = "models/aoc_weapon/w_shortsword.mdl",
         bone = "ValveBiped.Bip01_R_Hand",
         rel = "",
-        pos = Vector(2, 1.9, 5.015),
-        angle = Angle(15, 0, 195),
+        pos = Vector(2, 1.9, -7),
+        angle = Angle(90, 0, 195),
         size = Vector(0.8, 0.982, 0.541),
         color = Color(255, 255, 255, 255),
         surpresslightning = false,

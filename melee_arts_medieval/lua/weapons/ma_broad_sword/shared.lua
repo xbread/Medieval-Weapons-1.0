@@ -60,7 +60,7 @@ SWEP.BlockHoldType = "slam"
 SWEP.ShoveHoldType = "fist"
 SWEP.ThrowHoldType = "grenade"
 --SOUNDS
-SWEP.SwingSound = ""
+ SWEP.SwingSound = "weapons/iceaxe/iceaxe_swing1.wav"
 SWEP.ThrowSound = "weapons/iceaxe/iceaxe_swing1.wav"
 SWEP.Hit1Sound = "ambient/machines/slicer4.wav"
 SWEP.Hit2Sound = "ambient/machines/slicer3.wav"
@@ -113,7 +113,7 @@ SWEP.WallAng = Vector(0, 0, 0)
 
 function SWEP:AttackAnimation()
     self.Weapon.AttackAnimRate = 1.1
-    self.Owner:EmitSound("linkedlunge.mp3")
+     
     self.Weapon:SendWeaponAnim(ACT_VM_HITCENTER)
 end
 
@@ -124,13 +124,11 @@ function SWEP:AttackAnimation2()
     self.Weapon.AttackAnimRate = 1.8
 
     if right == true then
-        self.Owner:EmitSound("linkedslash.mp3")
         self.Punch1 = Angle(0, -15, 0)
         self.Weapon:SendWeaponAnim(ACT_VM_HITRIGHT)
         right = false
         left = true
     elseif left == true then
-        self.Owner:EmitSound("linkedslash.mp3")
         self.Punch1 = Angle(5, 10, 0)
         self.Weapon:SendWeaponAnim(ACT_VM_HITLEFT)
         left = false
@@ -149,8 +147,8 @@ SWEP.VElements = {
         bone = "RW_Weapon",
         rel = "",
         pos = Vector(0, 0.10, 2),
-        angle = Angle(90, -90, 0),
-        size = Vector(1, 0.8, 1),
+        angle = Angle(90, -90, 80),
+        size = Vector(1, 1, 1),
         color = Color(255, 255, 255, 255),
         surpresslightning = false,
         material = "",
